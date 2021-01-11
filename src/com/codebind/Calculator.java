@@ -223,6 +223,9 @@ public class Calculator extends Component {
                 fontBox.addItem("Carbon");
                 fontBox.addItem("Alwyn");
                 fontBox.addItem("ChinaOne");
+                fontBox.addItem("BlackCaps");
+                fontBox.addItem("PirateKeg");
+                fontBox.addItem("Baskerville");
                 sizeBox.addItem(10);
                 sizeBox.addItem(12);
                 sizeBox.addItem(14);
@@ -627,6 +630,80 @@ public class Calculator extends Component {
                     }
 
                 }
+                else if(fontString.equals("BlackCaps")) {
+
+                    try {
+                        // System.out.println(sizeInt);
+                        if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(19f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(22f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(12f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(14f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(16f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(35f);
+                        }
+
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(28f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(46f);
+                            //  System.out.println(sizeInt);
+                        }
+
+                    } catch (IOException | FontFormatException e1) {
+                        // Handle exception
+                    }
+
+                }
+
+
+                else if(fontString.equals("PirateKeg")) {
+
+                    try {
+                        // System.out.println(sizeInt);
+                        if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(19f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(22f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(12f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(14f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(16f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(35f);
+                        }
+
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(28f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(46f);
+                            //  System.out.println(sizeInt);
+                        }
+
+                    } catch (IOException | FontFormatException e1) {
+                        // Handle exception
+                    }
+
+                }
 
                 else if(fontString.equals("Alwyn")) {
 
@@ -656,6 +733,43 @@ public class Calculator extends Component {
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
                             font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(46f);
+                            //  System.out.println(sizeInt);
+                        }
+
+                    } catch (IOException | FontFormatException e1) {
+                        // Handle exception
+                    }
+
+                }
+
+                else if(fontString.equals("Baskerville")) {
+
+                    try {
+                        // System.out.println(sizeInt);
+                        if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(19f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(22f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(12f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(14f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(16f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(35f);
+                        }
+
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(28f);
+                        }
+                        else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
