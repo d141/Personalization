@@ -54,14 +54,16 @@ public class Calculator extends Component {
 
     String justifyString = "";
 
-    final JFileChooser  fc = new JFileChooser("C:/Users/Sitex.9.10.20.B/KMS Dropbox/KMS/All Bitmap Images");
+    final JFileChooser  fc = new JFileChooser("C:/Sitex/Files/Downloads");
 
     Color B = new Color(255,141,17);
+    Color P = new Color(64,0,0);
+
 
     public void clearBackground(){
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File(String.valueOf("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/CurrentSection.png")));
+            image = ImageIO.read(new File(String.valueOf("C:/Sitex/Files/Downloads/Name Drop/CurrentSection.png")));
         } catch (IOException e1) {
             e1.printStackTrace();
         }
@@ -71,7 +73,7 @@ public class Calculator extends Component {
             }
         }
 
-        File outputfile = new File("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/CurrentSection.png");
+        File outputfile = new File("C:/Sitex/Files/Downloads/Name Drop/CurrentSection.png");
         try {
             ImageIO.write(image, "png", outputfile);
         } catch (IOException e1) {
@@ -84,7 +86,7 @@ public class Calculator extends Component {
 
         BufferedImage image = null;
         try {
-            image = ImageIO.read(new File(String.valueOf("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/CurrentSection.png")));
+            image = ImageIO.read(new File(String.valueOf("C:/Sitex/Files/Downloads/Name Drop/CurrentSection.png")));
         } catch (IOException e1) {
             e1.printStackTrace();
         }
@@ -137,7 +139,7 @@ public class Calculator extends Component {
                 }
                 g.setColor(Color.cyan);
                 g.drawString(line.toUpperCase(), x, y-increment);
-                g.setColor(B);
+                g.setColor(P);
                 y++;
                 g.drawLine(0,y,473,y);
                 y += 40;
@@ -162,24 +164,24 @@ public class Calculator extends Component {
                 }
                 g.setColor(Color.CYAN);
                 g.drawString(line, x, y - increment);
-                g.setColor(B);
+                g.setColor(P);
                 y++;
                 g.drawLine(0, y, 473, y);
                 y += 40;
             }
         }
-        int blanks = 16-count;
+        int blanks =20-count;
 
         for(int i=0;i<blanks;i++){
             g.drawImage(image,0,y+1,null);
-            g.setColor(B);
+            g.setColor(P);
             y++;
             g.drawLine(0, y, 473, y);
             y += 40;
         }
         String message = "You entered " + count + " names.";
         JOptionPane.showMessageDialog(null,message);
-        if(count>16){
+        if(count>20){
             message = count + " names is too many!";
             JOptionPane.showMessageDialog(null,message,"TOO MANY NAMES",JOptionPane.ERROR_MESSAGE);
         }
@@ -270,28 +272,28 @@ public class Calculator extends Component {
                     try {
                        // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(35f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/collegeB.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/collegeB.ttf")).deriveFont(46f);
                           //  System.out.println(sizeInt);
                         }
 
@@ -306,29 +308,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BacktoBlack.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -343,29 +345,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/ChinaOne.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/ChinaOne.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -380,29 +382,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/CARBONBL.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/CARBONBL.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -417,28 +419,28 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(23f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(23f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(27f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(27f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(17f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(17f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(20f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(20f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(43f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(43f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(34f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(34f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(57f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Billy the Kid.ttf")).deriveFont(57f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -453,28 +455,28 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(23f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(23f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(27f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(27f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(17f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(17f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(20f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(20f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(43f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(43f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(34f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(34f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Rockwell.ttf")).deriveFont(57f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Rockwell.ttf")).deriveFont(57f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -489,28 +491,28 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(23f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(23f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(27f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(27f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(17f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(17f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(20f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(20f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(43f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(43f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(34f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(34f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(57f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/IFC Railroad.ttf")).deriveFont(57f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -525,29 +527,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(21f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(21f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(25f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(25f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(13f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(13f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(15f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(15f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(18f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(18f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(39f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(39f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(31f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(31f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Army.ttf")).deriveFont(52f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Army.ttf")).deriveFont(52f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -562,29 +564,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -599,29 +601,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Clarendon.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Clarendon.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -635,29 +637,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/BlackCaps.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/BlackCaps.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -673,29 +675,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/PirateKeg.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/PirateKeg.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -710,29 +712,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Alwyn.otf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Alwyn.otf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -747,29 +749,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Baskerville.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Baskerville.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -784,29 +786,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/Canterbury.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/Canterbury.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -820,29 +822,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/KittenSwash.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/KittenSwash.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -856,29 +858,29 @@ public class Calculator extends Component {
                     try {
                         // System.out.println(sizeInt);
                         if( (int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 16) {
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(19f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(19f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 19){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(22f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(22f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 10){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(12f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(12f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 12){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(14f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(14f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 14){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(16f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(16f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 30){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(35f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(35f);
                         }
 
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 24){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(28f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(28f);
                         }
                         else if((int)sizeBox.getItemAt(sizeBox.getSelectedIndex()) == 40){
-                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/fonts/copperplate.ttf")).deriveFont(46f);
+                            font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream("C:/Sitex/Files/Downloads/Name Drop/fonts/copperplate.ttf")).deriveFont(46f);
                             //  System.out.println(sizeInt);
                         }
 
@@ -939,7 +941,7 @@ public class Calculator extends Component {
                     int height = bitmapImage.getHeight();
                     System.out.println(height);
                     bitmapImage = bitmapImage.getSubimage(5, height-startingLineNum, 473, 41);
-                    String filename = "C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/CurrentSection.png";
+                    String filename = "C:/Sitex/Files/Downloads/Name Drop/CurrentSection.png";
                     File outputfile = new File(filename);
                     try {
                         ImageIO.write(bitmapImage, "png", outputfile);
@@ -963,7 +965,7 @@ if(kernCheckBox.isSelected()){
 
                 g2d.setFont(font);
                 g2d.dispose();
-                img = new BufferedImage(473, 1026, BufferedImage.TYPE_INT_ARGB);
+                img = new BufferedImage(473, 821, BufferedImage.TYPE_INT_ARGB);
                 g2d = img.createGraphics();
                 g2d.setFont(font);
 
@@ -1000,7 +1002,7 @@ if(kernCheckBox.isSelected()){
 
                 //Create the output file
                 String fileString = JOptionPane.showInputDialog(null,"What do you want to call the file?");
-                String filename = "C:/Users/Sitex.9.10.20.B/Desktop/Name Drop/" + fileString + ".bmp";
+                String filename = "C:/Sitex/Files/Downloads/Name Drop/" + fileString + ".bmp";
                 File outputfile = new File(filename);
                 BufferedImage finalImage = new BufferedImage(img.getWidth(),
                         img.getHeight(), BufferedImage.TYPE_INT_RGB);
