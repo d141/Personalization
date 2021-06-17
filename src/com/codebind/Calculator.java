@@ -58,6 +58,7 @@ public class Calculator extends Component {
 
     Color B = new Color(255,141,17);
     Color P = new Color(64,0,0);
+    Color W = new Color(249, 218, 224);
 
 
     public void clearBackground(){
@@ -137,7 +138,7 @@ public class Calculator extends Component {
                 else if(alignment.equals("Custom") && justifyString.equals("Justify Right")) {
                     x = Integer.parseInt(startString)-width;
                 }
-                g.setColor(Color.cyan);
+                g.setColor(W);
                 g.drawString(line.toUpperCase(), x, y-increment);
                 g.setColor(P);
                 y++;
@@ -162,7 +163,7 @@ public class Calculator extends Component {
                 else if(alignment.equals("Custom") && justifyString.equals("Justify Right")) {
                     x = Integer.parseInt(startString)-width;
                 }
-                g.setColor(Color.CYAN);
+                g.setColor(W);
                 g.drawString(line, x, y - increment);
                 g.setColor(P);
                 y++;
@@ -203,31 +204,31 @@ public class Calculator extends Component {
 
                 //  String[] fonts = {"Arial","Times New Roman"};
                 fontBox.addItem("Arial");
-                fontBox.addItem("Times New Roman");
-                fontBox.addItem("Tahoma");
-                fontBox.addItem("College Black");
-                fontBox.addItem("Arial Black");
+                //fontBox.addItem("Times New Roman");
+                //fontBox.addItem("Tahoma");
+                //fontBox.addItem("College Black");
+                //fontBox.addItem("Arial Black");
                 // fontBox.addItem("Vitesse Bold");
-                fontBox.addItem("Rockwell");
-                fontBox.addItem("News701 BT");
-                fontBox.addItem("MS Sans Serif Regular");
-                fontBox.addItem("Brush Script MT Italic");
-                fontBox.addItem("Copperplate Gothic");
+                //fontBox.addItem("Rockwell");
+                //fontBox.addItem("News701 BT");
+                //fontBox.addItem("MS Sans Serif Regular");
+                //fontBox.addItem("Brush Script MT Italic");
+                //fontBox.addItem("Copperplate Gothic");
                 fontBox.addItem("Clarendon BT");
-                fontBox.addItem("Back to Black");
-                fontBox.addItem("Army");
-                fontBox.addItem("Billy the Kid");
-                fontBox.addItem("IFC Railroad");
-                fontBox.addItem("Goudy STO");
-                fontBox.addItem("Canterbury");
-                fontBox.addItem("Kitten Swash");
-                fontBox.addItem("Drop Dead Gorgeous");
-                fontBox.addItem("Carbon");
-                fontBox.addItem("Alwyn");
-                fontBox.addItem("ChinaOne");
-                fontBox.addItem("BlackCaps");
-                fontBox.addItem("PirateKeg");
-                fontBox.addItem("Baskerville");
+                //fontBox.addItem("Back to Black");
+                //fontBox.addItem("Army");
+                //fontBox.addItem("Billy the Kid");
+                //fontBox.addItem("IFC Railroad");
+                //fontBox.addItem("Goudy STO");
+                //fontBox.addItem("Canterbury");
+                //fontBox.addItem("Kitten Swash");
+                //fontBox.addItem("Drop Dead Gorgeous");
+                //fontBox.addItem("Carbon");
+                //fontBox.addItem("Alwyn");
+                //fontBox.addItem("ChinaOne");
+                //fontBox.addItem("BlackCaps");
+                //fontBox.addItem("PirateKeg");
+                //fontBox.addItem("Baskerville");
                 sizeBox.addItem(10);
                 sizeBox.addItem(12);
                 sizeBox.addItem(14);
